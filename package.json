@@ -1,0 +1,16 @@
+{
+  "name": "dynamic-state-management-prototype",
+  "version": "1.0.0",
+  "description": "Testing dynamic state management for asynchronous state managers.",
+  "author": "Kyle Andrews",
+  "license": "MIT",
+  "scripts": {
+    "compile": "tsc",
+    "preview": "serve -d ./docs",
+    "build": "npm run compile && npm run preview"
+  },
+  "devDependencies": {
+    "serve": "^11.2.0",
+    "typescript": "^3.7.2"
+  }
+}

@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "outDir": "docs",
+        "target": "es2019",
+        "module": "esnext",
+        "lib": [
+            "dom",
+            "esnext"
+        ]
+    },
+    "include": [
+        "src"
+    ]
+}

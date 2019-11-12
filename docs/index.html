@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dynamic State Management Prototype</title>
+    <meta name="description" content="Testing dynamic state management for asynchronous state managers.">
+
+    <style>
+        :root
+        {
+            font-size: 100%;
+        }
+
+        *
+        {
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        body
+        {
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            background-color: #fafafa;
+            font-size: 1rem;
+            font-family: system-ui, sans-serif;
+            justify-content: center;
+            align-items: center;
+            flex-flow: column wrap;
+            color: #333;
+        }
+
+        state-status-tracker
+        {
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        state-status-tracker span
+        {
+            margin-right: 0.25rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        state-status,
+        secondary-state-status
+        {
+            color: #daa520;
+        }
+
+        manual-toggle-button
+        {
+            display: inline-block;
+            height: 36px;
+            cursor: pointer;
+            line-height: 36px;
+            padding: 0 1rem;
+            border-radius: 0.125rem;
+            background-color: dodgerblue;
+            color: #fff;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            user-select: none;
+        }
+
+        label
+        {
+            margin-right: 1rem;
+            cursor: pointer;
+            user-select: none;
+        }
+    </style>
+
+    <script type="module" src="main.js"></script>
+</head>
+<body>
+    <div style="width:240px;margin-bottom:2rem;border:1px dashed #bbbbbb;padding:1rem;">
+        <state-status-tracker>
+            <div style="display:block;margin-bottom: 0.5rem;">
+                <span>State 1 Is active:</span>
+                <state-status>Inactive</state-status>
+            </div>
+            <div style="display:block;">
+                <span>State 2 Is active:</span>
+                <secondary-state-status>Inactive</secondary-state-status>
+            </div>
+        </state-status-tracker>
+        <manual-toggle-button style="display: block; text-align: center;">
+            Toggle State 2
+        </manual-toggle-button>
+    </div>
+    <dynamic-options style="padding:1rem;margin-bottom: 2rem;border:1px dashed #bbbbbb;">
+        <input name="options" id="option-1" type="checkbox" value="0">
+        <label for="option-1">Option 1</label>
+        <input name="options" id="option-2" type="checkbox" value="1">
+        <label for="option-2">Option 2</label>
+        <input name="options" id="option-3" type="checkbox" value="2">
+        <label for="option-3">Option 3</label>
+    </dynamic-options>
+    <deep-updates style="padding:1rem;margin-bottom: 2rem;border:1px dashed #bbbbbb;width:260px;">
+        <input type="number" name="deep" value="0" id="deep-1" style="display: block;margin-bottom: 0.5rem;height: 36px;font-size: 1rem;padding:0 1rem;width:100%;">
+        <span style="text-transform: uppercase;font-weight: 600;margin-right: 0.5rem;margin-left:0.125rem;">Deep Auto Increment:</span><deep-two style="color:orange;">0</deep-two>
+    </deep-updates>
+    <div style="margin-bottom: 2rem;opacity: 0.87;font-size: 1.25rem;user-select: none;">
+        <span>Open the developer console to view the state object.<span>
+    </div>
+</body>
+</html>
